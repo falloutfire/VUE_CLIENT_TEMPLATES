@@ -1,4 +1,4 @@
-# first-vue
+# VUE_CLIENT_TEMPLATES
 
 ## Project setup
 ```
