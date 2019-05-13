@@ -3,8 +3,8 @@ import store from "./store"
 import axios from "axios"
 
 const HTTP = axios.create({
-    // baseURL: "https://test-spring-boom.herokuapp.com/",
-     baseURL: "http://127.0.0.1:8080/",
+    baseURL: "https://test-spring-boom.herokuapp.com/",
+     //baseURL: "http://127.0.0.1:8080/",
 });
 
 HTTP.interceptors.request.use(config => {
