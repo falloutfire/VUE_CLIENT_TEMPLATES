@@ -26,35 +26,21 @@ export const deviceDescription = {
         },
         label: 'name',
     },
-    os: {
-        descriptionFieldType: 'textField',
-        editableField: false,
+    os:  {
+        descriptionFieldType: 'selectField',
+        urlToGetSelectables: 'bd_template/os',
+        objectKeyField: 'name',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
         convertFunction: (prop) => {
             return `${prop.name} ${prop.version}`
         },
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
+        itemText: "name",
+        itemValue: "id",
+        returnObject: true,
         label: 'os',
-    },
-    'os.name': {
-        descriptionFieldType: 'textField',
-        label: 'os name',
-        showInTable: false,
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-    },
-    'os.version': {
-        descriptionFieldType: 'textField',
-        label: 'os version',
-        showInTable: false,
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
     },
     camDiafragma: {
         descriptionFieldType: 'textField',
