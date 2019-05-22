@@ -1,20 +1,15 @@
 export const defaultTemplate = {
     id: "",
     colorScheme: "",
-    rounding: "",
+    name: "",
     device: "",
     film: "",
     luminophore: "",
-    xcolor: "",
-    ycolor: "",
-    zcolor: "",
-    xdelta: "",
-    ydelta: "",
-    zdelta: ""
+    color: ""
 };
 
 export const templateDescription = {
-    id:  {
+    id: {
         descriptionFieldType: 'textField',
         editableField: false,
         flexValues: {
@@ -23,7 +18,7 @@ export const templateDescription = {
         },
         label: 'id',
     },
-    colorScheme:  {
+    colorScheme: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
@@ -31,15 +26,15 @@ export const templateDescription = {
         },
         label: 'colorScheme',
     },
-    rounding:  {
+    name: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'rounding',
+        label: 'name',
     },
-    device:  {
+    device: {
         descriptionFieldType: 'selectField',
         urlToGetSelectables: 'bd_template/device',
         flexValues: {
@@ -55,7 +50,7 @@ export const templateDescription = {
         returnObject: true,
         label: 'device',
     },
-    film:  {
+    film: {
         descriptionFieldType: 'selectField',
         urlToGetSelectables: 'bd_template/film',
         flexValues: {
@@ -71,7 +66,7 @@ export const templateDescription = {
         returnObject: true,
         label: 'film',
     },
-    luminophore:  {
+    luminophore: {
         descriptionFieldType: 'selectField',
         urlToGetSelectables: 'bd_template/luminophore',
         flexValues: {
@@ -87,51 +82,12 @@ export const templateDescription = {
         returnObject: true,
         label: 'luminophore',
     },
-    xcolor:  {
+    color: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'xcolor',
+        label: 'color',
     },
-    ycolor:  {
-        descriptionFieldType: 'textField',
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-        label: 'ycolor',
-    },
-    zcolor:  {
-        descriptionFieldType: 'textField',
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-        label: 'zcolor',
-    },
-    xdelta:  {
-        descriptionFieldType: 'textField',
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-        label: 'xdelta',
-    },
-    ydelta:  {
-        descriptionFieldType: 'textField',
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-        label: 'ydelta',
-    },
-    zdelta:  {
-        descriptionFieldType: 'textField',
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-        label: 'zdelta',
-    },};
+};

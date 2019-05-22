@@ -2,7 +2,9 @@ export const defaultFilm = {
     id: "",
     name: "",
     color: "",
-    chemicalType: ""
+    chemicalType: "",
+    lightPermeability: "",
+    thickness: ""
 };
 
 export const filmDescription = {
@@ -23,13 +25,21 @@ export const filmDescription = {
         },
         label: 'name',
     },
-    color:  {
+    lightPermeability:  {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'color',
+        label: 'lightPermeability',
+    },
+    thickness:  {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'thickness',
     },
     chemicalType:  {
         descriptionFieldType: 'selectField',

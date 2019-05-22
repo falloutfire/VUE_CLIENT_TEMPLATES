@@ -3,6 +3,9 @@ export const defaultLuminophore = {
     name: "",
     color: "",
     size: "",
+    brightness: "",
+    afterglow: "",
+    activationTime: ""
 };
 
 export const luminophoreDescription = {
@@ -38,6 +41,30 @@ export const luminophoreDescription = {
             sm6: true,
         },
         label: 'size',
+    },
+    brightness:  {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'brightness',
+    },
+    afterglow:  {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'afterglow',
+    },
+    activationTime:  {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'activationTime',
     },
 };
 

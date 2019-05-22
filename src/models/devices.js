@@ -1,8 +1,8 @@
 export const defaultDevice = {
     id: "",
     name: "",
-    os: "",
-    camDiafragma: 0.0,
+    //os: "",
+    resolution: "",
     mp: 0,
     focus: 0.0,
     stabilization: false
@@ -26,7 +26,7 @@ export const deviceDescription = {
         },
         label: 'name',
     },
-    os:  {
+    /*os:  {
         descriptionFieldType: 'selectField',
         urlToGetSelectables: 'bd_template/os',
         objectKeyField: 'name',
@@ -41,14 +41,14 @@ export const deviceDescription = {
         itemValue: "id",
         returnObject: true,
         label: 'os',
-    },
-    camDiafragma: {
+    },*/
+    resolution: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'camDiafragma',
+        label: 'resolution',
     },
     mp: {
         descriptionFieldType: 'textField',
