@@ -50,7 +50,7 @@
     import lodash from 'lodash';
 
     import {defaultUser, usersDescription} from "@/models/users";
-    import {defaultOs, osDescription} from "@/models/os";
+    //import {defaultOs, osDescription} from "@/models/os";
     import {defaultDevice, deviceDescription} from "@/models/devices";
     import {chemicalTypeDescription, defaultChemicalType} from "@/models/chemicalTypes";
     import {defaultFilm, filmDescription} from "@/models/films";
@@ -75,13 +75,13 @@
                         defaultItem: lodash.cloneDeep(defaultUser),
                         filterName: 'username'
                     },
-                    'OSTable': {
+                    /*'OSTable': {
                         tableName: 'Operation Systems',
                         crudURL: 'bd_template/os',
                         itemsDescription: lodash.cloneDeep(osDescription),
                         defaultItem: lodash.cloneDeep(defaultOs),
                         filterName: 'name'
-                    },
+                    },*/
                     'DeviceTable': {
                         tableName: 'Device',
                         crudURL: 'bd_template/device',
@@ -123,10 +123,10 @@
                         title: 'Users',
                         table: 'UserTable',
                     },
-                    {
+                    /*{
                         title: 'Operational systems',
                         table: 'OSTable',
-                    },
+                    },*/
                     {
                         title: 'Devices',
                         table: 'DeviceTable',
