@@ -53,7 +53,7 @@ export default new Router({
             component: () => import('./components/Panel.vue')
         },
         {
-            path: '/*',
+            path: '*',
             name: "not_found",
             component: () => import('./components/NotFound.vue')
         }
