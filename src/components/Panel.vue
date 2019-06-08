@@ -9,7 +9,9 @@
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-toolbar-items>
-                    <v-btn @click="$store.dispatch('clearTokens').then(() => $router.push({name: 'login'}))" flat>LOG OUT</v-btn>
+                    <v-btn @click="$store.dispatch('clearTokens').then(() => $router.push({name: 'login'}))" flat>LOG
+                        OUT
+                    </v-btn>
                 </v-toolbar-items>
             </v-toolbar>
             <v-navigation-drawer v-model="drawer"
@@ -34,23 +36,74 @@
                 </v-list>
             </v-navigation-drawer>
 
-            <v-flex v-if="currentTable" xs12 class="pt-5">
-                <crud-table
-                        :key="currentTable.tableName"
-                        v-bind="currentTable"
-                ></crud-table>
-            </v-flex>
+            <v-layout row>
+                <v-flex v-if="currentTable" xs9 pa-1 class="pt-5">
+                    <crud-table
+                            :key="currentTable.tableName"
+                            v-bind="currentTable"
+                    ></crud-table>
+                </v-flex>
+                <v-divider></v-divider>
+                <v-flex xs3 class="pt-5 mt-4 mb-1" pa-1>
+                    <v-card dark tile color="white" height="100%">
+                        <v-card-title primary-title>
+                            <div>
+                                <h3 class="headline" style="color:blue;">SERVER STATS</h3>
+                            </div>
+                            <v-container>
+
+                                <section v-if="errored">
+                                    <p>We're not able to retrieve this information at the moment, please try back later</p>
+                                </section>
+
+                                <section v-else>
+                                    <div v-if="loading">Loading...</div>
+
+                                    <div v-else>
+                                        <div>
+                                            <span style="color:blue;font-weight:bold">SERVER : </span>
+                                            <span style="color:blue"> {{ info.status }}</span>
+                                            <br><br>
+                                            <span class="lighten">
+                                                <span style="color:blue;font-weight:bold">DATABASE : </span>
+                                                <span style="color:blue;" v-html="info.details.db.status"></span>
+                                                <br>
+                                                <span style="color:blue;font-weight:bold">DATABASE NAME : </span>
+                                                <span style="color:blue;" v-html="info.details.db.details.database"></span>
+                                                <br><br>
+                                                <span style="color:blue;font-weight:bold">DISK SPACE </span>
+                                                <div v-for="(item, index) in info.details.diskSpace.details">
+                                                    <span style="color:blue;">
+                                                        <span style="color:blue;font-weight:bold">
+                                                            {{index}}</span>: {{computeData(item)}} Mbyte</span>
+
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </section>
+
+                            </v-container>
+                        </v-card-title>
+
+                        <v-card-text>
+
+                        </v-card-text>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+
+
         </v-layout>
     </v-app>
 </template>
 
 <script>
-    // import HelloWorld from './components/HelloWorld'
     import CrudTable from '@/components/CrudTable'
     import lodash from 'lodash';
+    import axios from "axios"
 
     import {defaultUser, usersDescription} from "@/models/users";
-    //import {defaultOs, osDescription} from "@/models/os";
     import {defaultDevice, deviceDescription} from "@/models/devices";
     import {chemicalTypeDescription, defaultChemicalType} from "@/models/chemicalTypes";
     import {defaultFilm, filmDescription} from "@/models/films";
@@ -65,6 +118,9 @@
         },
         data() {
             return {
+                info: null,
+                loading: true,
+                errored: false,
                 drawer: null,
                 currentTableName: null,
                 tables: {
@@ -75,13 +131,6 @@
                         defaultItem: lodash.cloneDeep(defaultUser),
                         filterName: 'username'
                     },
-                    /*'OSTable': {
-                        tableName: 'Operation Systems',
-                        crudURL: 'bd_template/os',
-                        itemsDescription: lodash.cloneDeep(osDescription),
-                        defaultItem: lodash.cloneDeep(defaultOs),
-                        filterName: 'name'
-                    },*/
                     'DeviceTable': {
                         tableName: 'Device',
                         crudURL: 'bd_template/device',
@@ -123,10 +172,6 @@
                         title: 'Users',
                         table: 'UserTable',
                     },
-                    /*{
-                        title: 'Operational systems',
-                        table: 'OSTable',
-                    },*/
                     {
                         title: 'Devices',
                         table: 'DeviceTable',
@@ -155,6 +200,22 @@
             setCurrentTable(tableName) {
                 this.drawer = !this.drawer;
                 this.currentTableName = tableName;
+            },
+            loadData() {
+                axios
+                    .get('https://test-spring-boom.herokuapp.com/actuator/health')
+                    .then(response => {
+                        this.info = response.data;
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        this.errored = true;
+                    })
+                    .finally(() => (this.loading = false));//.bind(this));
+            },
+            computeData(value) {
+                value = value / 1024 / 1024;
+                return value.toFixed(0);
             }
         },
         computed: {
@@ -164,6 +225,13 @@
             table() {
                 return this.currentTableName ? CrudTable : null
             }
+        },
+        mounted() {
+            this.loadData();
+
+            setInterval(function () {
+                this.loadData();
+            }.bind(this), 1000);
         }
     }
 </script>
