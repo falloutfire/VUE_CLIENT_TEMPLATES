@@ -109,6 +109,7 @@
     import {defaultFilm, filmDescription} from "@/models/films";
     import {defaultLuminophore, luminophoreDescription} from "@/models/luminophore";
     import {defaultTemplate, templateDescription} from "@/models/templates";
+    import {defaultSignature, signatureDescription} from "@/models/signature";
 
 
     export default {
@@ -166,6 +167,13 @@
                         defaultItem: lodash.cloneDeep(defaultTemplate),
                         filterName: 'name'
                     },
+                    'SignatureTable': {
+                                            tableName: 'Signature',
+                                            crudURL: 'bd_template/signature/format',
+                                            itemsDescription: lodash.cloneDeep(signatureDescription),
+                                            defaultItem: lodash.cloneDeep(defaultSignature),
+                                            filterName: 'description'
+                                        },
                 },
                 items: [
                     {
@@ -191,6 +199,10 @@
                     {
                         title: 'Templates',
                         table: 'TemplatesTable',
+                    },
+{
+                        title: 'Signature',
+                        table: 'SignatureTable',
                     },
 
                 ],

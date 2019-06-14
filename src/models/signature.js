@@ -1,10 +1,11 @@
-export const defaultOs = {
+export const defaultSignature = {
     id: "",
-    name: "",
-    version: ""
+    description: "",
+    date: "",
+    signature: ""
 };
 
-export const osDescription = {
+export const signatureDescription = {
     id: {
         descriptionFieldType: 'textField',
         editableField: false,
@@ -14,20 +15,28 @@ export const osDescription = {
         },
         label: 'id',
     },
-    name: {
+    description: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'name',
+        label: 'description',
     },
-    version: {
+    date: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'version',
+        label: 'date',
+    },
+    signature: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'signature',
     }
 };
