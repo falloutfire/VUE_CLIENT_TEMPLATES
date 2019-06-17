@@ -53,7 +53,8 @@
                             <v-container>
 
                                 <section v-if="errored">
-                                    <p>We're not able to retrieve this information at the moment, please try back later</p>
+                                    <p>We're not able to retrieve this information at the moment, please try back
+                                        later</p>
                                 </section>
 
                                 <section v-else>
@@ -69,7 +70,8 @@
                                                 <span style="color:blue;" v-html="info.details.db.status"></span>
                                                 <br>
                                                 <span style="color:blue;font-weight:bold">DATABASE NAME : </span>
-                                                <span style="color:blue;" v-html="info.details.db.details.database"></span>
+                                                <span style="color:blue;"
+                                                      v-html="info.details.db.details.database"></span>
                                                 <br><br>
                                                 <span style="color:blue;font-weight:bold">DISK SPACE </span>
                                                 <div v-for="(item, index) in info.details.diskSpace.details">
@@ -130,50 +132,57 @@
                         crudURL: 'users',
                         itemsDescription: lodash.cloneDeep(usersDescription),
                         defaultItem: lodash.cloneDeep(defaultUser),
-                        filterName: 'username'
+                        filterName: 'username',
+                        create: true
                     },
                     'DeviceTable': {
                         tableName: 'Device',
                         crudURL: 'bd_template/device',
                         itemsDescription: lodash.cloneDeep(deviceDescription),
                         defaultItem: lodash.cloneDeep(defaultDevice),
-                        filterName: 'name'
+                        filterName: 'name',
+                        create: true
                     },
                     'ChemicalTypesTable': {
                         tableName: 'ChemicalType',
                         crudURL: 'bd_template/chemical_types',
                         itemsDescription: lodash.cloneDeep(chemicalTypeDescription),
                         defaultItem: lodash.cloneDeep(defaultChemicalType),
-                        filterName: 'type'
+                        filterName: 'type',
+                        create: true
                     },
                     'FilmsTable': {
                         tableName: 'Film',
                         crudURL: 'bd_template/film',
                         itemsDescription: lodash.cloneDeep(filmDescription),
                         defaultItem: lodash.cloneDeep(defaultFilm),
-                        filterName: 'name'
+                        filterName: 'name',
+                        create: true
                     },
                     'LuminophoreTable': {
                         tableName: 'Luminophore',
                         crudURL: 'bd_template/luminophore',
                         itemsDescription: lodash.cloneDeep(luminophoreDescription),
                         defaultItem: lodash.cloneDeep(defaultLuminophore),
-                        filterName: 'name'
+                        filterName: 'name',
+                        create: true
                     },
                     'TemplatesTable': {
                         tableName: 'Template',
                         crudURL: 'bd_template/template',
                         itemsDescription: lodash.cloneDeep(templateDescription),
                         defaultItem: lodash.cloneDeep(defaultTemplate),
-                        filterName: 'name'
+                        filterName: 'name',
+                        create: true
                     },
                     'SignatureTable': {
-                                            tableName: 'Signature',
-                                            crudURL: 'bd_template/signature/format',
-                                            itemsDescription: lodash.cloneDeep(signatureDescription),
-                                            defaultItem: lodash.cloneDeep(defaultSignature),
-                                            filterName: 'description'
-                                        },
+                        tableName: 'Signature',
+                        crudURL: 'bd_template/signature/format',
+                        itemsDescription: lodash.cloneDeep(signatureDescription),
+                        defaultItem: lodash.cloneDeep(defaultSignature),
+                        filterName: 'description',
+                        create: false
+                    },
                 },
                 items: [
                     {
@@ -200,7 +209,7 @@
                         title: 'Templates',
                         table: 'TemplatesTable',
                     },
-{
+                    {
                         title: 'Signature',
                         table: 'SignatureTable',
                     },
@@ -223,7 +232,7 @@
                         console.log(error);
                         this.errored = true;
                     })
-                    .finally(() => (this.loading = false));//.bind(this));
+                    .finally(() => (this.loading = false));
             },
             computeData(value) {
                 value = value / 1024 / 1024;

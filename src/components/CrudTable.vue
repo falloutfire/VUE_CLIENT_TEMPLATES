@@ -14,7 +14,7 @@
                               :label="filteredName" clearable></v-text-field>
             </v-flex>
             <v-spacer></v-spacer>
-            <v-btn color="primary" dark class="mb-2" @click="createDialog = true">New {{ tableName }}</v-btn>
+            <v-btn v-if="create" color="primary" dark class="mb-2" @click="createDialog = true">New {{ tableName }}</v-btn>
             <v-dialog v-model="deleteDialog" max-width="500px">
                 <v-card>
                     <v-card-title>
@@ -124,7 +124,8 @@
             crudURL: String,
             itemsDescription: Object,
             defaultItem: Object,
-            filterName: String
+            filterName: String,
+            create: Boolean
         },
         data() {
             return {
