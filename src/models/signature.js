@@ -30,7 +30,7 @@ export const signatureDescription = {
             sm6: true,
         },
         label: 'date',
-    },
+    }/*,
     signature: {
         descriptionFieldType: 'textField',
         flexValues: {
@@ -38,5 +38,5 @@ export const signatureDescription = {
             sm6: true,
         },
         label: 'signature',
-    }
+    }*/
 };
