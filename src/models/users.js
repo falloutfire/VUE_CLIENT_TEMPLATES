@@ -49,7 +49,7 @@ export const usersDescription = {
         },
         label: 'Username',
     },
-    /*password: {
+    password: {
         descriptionFieldType: 'textField',
         showInTable: false,
         flexValues: {
@@ -57,7 +57,7 @@ export const usersDescription = {
         },
         label: 'Password',
         type: 'password'
-    },*/
+    },
     roles: {
         descriptionFieldType: 'selectField',
         convertFunction: (prop) => {
