@@ -36,6 +36,11 @@
                                     ></v-text-field>
                                 </template>
                             </template>
+                            <v-text-field
+                                    v-if="descr['descriptionFieldType'] === 'dateField'"
+                                    v-model="value[key]"
+                                    v-bind="descr"
+                            ></v-text-field>
                             <v-select
                                     v-if="descr['descriptionFieldType'] === 'selectField'"
                                     v-model="value[key]"
@@ -47,6 +52,7 @@
                                     v-model="value[key]"
                                     v-bind="descr"
                             ></v-checkbox>
+
                         </v-flex>
                     </v-layout>
                 </v-container>
@@ -75,7 +81,7 @@
         },
         data() {
             return {
-                items: {}
+                items: {},
             }
         },
         methods: {
@@ -88,6 +94,9 @@
                     })
                 })
             },
+            parseDate(key) {
+                return new Date(key).toISOString().substr(0, 10)
+            }
         },
         computed: {
             fields() {
@@ -99,7 +108,7 @@
                 });
                 this.retrieveSelectable(fields);
                 return fields;
-            },
+            }
         },
     }
 </script>

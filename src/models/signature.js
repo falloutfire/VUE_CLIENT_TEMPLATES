@@ -24,12 +24,16 @@ export const signatureDescription = {
         label: 'description',
     },
     date: {
-        descriptionFieldType: 'textField',
+        descriptionFieldType: 'dateField',
+        convertFunction: (prop) => {
+            prop = new Date(prop).toISOString().substr(0, 10);
+            return prop
+        },
         flexValues: {
-            xs12: true,
-            sm6: true,
+            xs12: true
         },
         label: 'date',
+        readonly: true
     }/*,
     signature: {
         descriptionFieldType: 'textField',
