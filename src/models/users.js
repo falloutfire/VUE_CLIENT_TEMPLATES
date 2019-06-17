@@ -1,4 +1,5 @@
 export const defaultUser = {
+    id: "",
     firstName: "",
     lastName: "",
     email: "",
