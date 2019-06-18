@@ -44,28 +44,29 @@
                     ></crud-table>
                 </v-flex>
                 <v-divider></v-divider>
-                <v-flex xs3 class="pt-5 mt-4 mb-1" pa-1>
-                    <v-card dark tile color="white" height="100%">
-                        <v-card-title primary-title>
-                            <div>
-                                <h3 class="headline" style="color:blue;">SERVER STATS</h3>
-                            </div>
-                            <v-container>
+                <v-layout row wrap>
+                    <v-flex xs3 class="pt-5 mt-4 mb-1" pa-1>
+                        <v-card dark tile color="white" height="100%">
+                            <v-card-title primary-title>
+                                <div>
+                                    <h3 class="headline" style="color:blue;">SERVER STATS</h3>
+                                </div>
+                                <v-container>
 
-                                <section v-if="errored">
-                                    <p>We're not able to retrieve this information at the moment, please try back
-                                        later</p>
-                                </section>
+                                    <section v-if="errored">
+                                        <p>We're not able to retrieve this information at the moment, please try back
+                                            later</p>
+                                    </section>
 
-                                <section v-else>
-                                    <div v-if="loading">Loading...</div>
+                                    <section v-else>
+                                        <div v-if="loading">Loading...</div>
 
-                                    <div v-else>
-                                        <div>
-                                            <span style="color:blue;font-weight:bold">SERVER : </span>
-                                            <span style="color:blue"> {{ info.status }}</span>
-                                            <br><br>
-                                            <span class="lighten">
+                                        <div v-else>
+                                            <div>
+                                                <span style="color:blue;font-weight:bold">SERVER : </span>
+                                                <span style="color:blue"> {{ info.status }}</span>
+                                                <br><br>
+                                                <span class="lighten">
                                                 <span style="color:blue;font-weight:bold">DATABASE : </span>
                                                 <span style="color:blue;" v-html="info.details.db.status"></span>
                                                 <br>
@@ -81,18 +82,23 @@
 
                                                 </div>
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                </section>
+                                    </section>
 
-                            </v-container>
-                        </v-card-title>
+                                </v-container>
+                            </v-card-title>
 
-                        <v-card-text>
+                            <v-card-text>
 
-                        </v-card-text>
-                    </v-card>
-                </v-flex>
+                            </v-card-text>
+                        </v-card>
+                    </v-flex>
+                    <v-flex xs3 class="pt-5 mt-4 mb-1" pa-1>
+
+                    </v-flex>
+                </v-layout>
+
             </v-layout>
 
 
@@ -132,7 +138,7 @@
                         crudURL: 'users',
                         itemsDescription: lodash.cloneDeep(usersDescription),
                         defaultItem: lodash.cloneDeep(defaultUser),
-                        filterName: 'username',
+                        filterName: 'userName',
                         create: true
                     },
                     'DeviceTable': {
