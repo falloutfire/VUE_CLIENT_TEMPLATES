@@ -44,7 +44,6 @@
                     ></crud-table>
                 </v-flex>
                 <v-divider></v-divider>
-                <v-layout row wrap>
                     <v-flex xs3 class="pt-5 mt-4 mb-1" pa-1>
                         <v-card dark tile color="white" height="100%">
                             <v-card-title primary-title>
@@ -94,11 +93,6 @@
                             </v-card-text>
                         </v-card>
                     </v-flex>
-                    <v-flex xs3 class="pt-5 mt-4 mb-1" pa-1>
-
-                    </v-flex>
-                </v-layout>
-
             </v-layout>
 
 
