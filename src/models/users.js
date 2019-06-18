@@ -3,8 +3,8 @@ export const defaultUser = {
     firstName: "",
     lastName: "",
     email: "",
-    username: "",
-    password: "",
+    userName: "",
+    userPassword: "",
     roles: [],
 };
 
@@ -42,7 +42,7 @@ export const usersDescription = {
         },
         label: 'Email',
     },
-    username: {
+    userName: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
@@ -50,7 +50,7 @@ export const usersDescription = {
         },
         label: 'Username',
     },
-    password: {
+    userPassword: {
         descriptionFieldType: 'textField',
         showInTable: false,
         flexValues: {
