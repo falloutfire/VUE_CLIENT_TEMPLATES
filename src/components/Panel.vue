@@ -132,7 +132,7 @@
                         crudURL: 'users',
                         itemsDescription: lodash.cloneDeep(usersDescription),
                         defaultItem: lodash.cloneDeep(defaultUser),
-                        filterName: 'userName',
+                        filterName: 'login',
                         create: true
                     },
                     'DeviceTable': {
