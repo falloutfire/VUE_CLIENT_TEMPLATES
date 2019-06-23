@@ -24,31 +24,17 @@ export const deviceDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'name',
+        label: 'Название',
     },
-    /*os:  {
-        descriptionFieldType: 'selectField',
-        urlToGetSelectables: 'bd_template/os',
-        objectKeyField: 'name',
-        flexValues: {
-            xs12: true,
-            sm6: true,
-        },
-        convertFunction: (prop) => {
-            return `${prop.name} ${prop.version}`
-        },
-        itemText: "name",
-        itemValue: "id",
-        returnObject: true,
-        label: 'os',
-    },*/
     resolution: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'resolution',
+        label: 'Разрешение',
+        suffix: 'px',
+        mask: '####*####'
     },
     mp: {
         descriptionFieldType: 'textField',
@@ -56,7 +42,9 @@ export const deviceDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'mp',
+        label: 'Камера',
+        suffix: 'Мп',
+        mask: '###'
     },
     focus: {
         descriptionFieldType: 'textField',
@@ -64,7 +52,7 @@ export const deviceDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'focus',
+        label: 'Фокусное расстояние',
     },
     stabilization: {
         descriptionFieldType: 'checkBox',
@@ -72,6 +60,6 @@ export const deviceDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'stabilization',
+        label: 'Наличие стабилизации',
     }
 };

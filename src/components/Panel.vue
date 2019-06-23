@@ -4,7 +4,7 @@
             <v-toolbar dark color="primary" app>
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
                 <v-toolbar-title class="headline text-uppercase">
-                    <span>KLEKNER </span>
+                    <span>Klöckner Pentaplast </span>
                     <span class="font-weight-light">ADMIN PANEL</span>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>

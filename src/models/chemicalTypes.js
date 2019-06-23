@@ -18,6 +18,6 @@ export const chemicalTypeDescription = {
         flexValues: {
             xs12: true,
         },
-        label: 'chemical type',
+        label: 'Химический тип',
     },
 };

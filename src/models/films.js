@@ -23,7 +23,7 @@ export const filmDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'name',
+        label: 'Название',
     },
     lightPermeability:  {
         descriptionFieldType: 'textField',
@@ -31,7 +31,7 @@ export const filmDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'lightPermeability',
+        label: 'Светопроницаемость',
     },
     thickness:  {
         descriptionFieldType: 'textField',
@@ -39,7 +39,8 @@ export const filmDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'thickness',
+        label: 'Толщина',
+        suffix: 'мм'
     },
     chemicalType:  {
         descriptionFieldType: 'selectField',
@@ -55,6 +56,6 @@ export const filmDescription = {
         itemText: "type",
         itemValue: "id",
         returnObject: true,
-        label: 'chemicalType',
+        label: 'Химический тип',
     },
 };

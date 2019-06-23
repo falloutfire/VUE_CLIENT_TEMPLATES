@@ -24,7 +24,7 @@ export const templateDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'colorScheme',
+        label: 'Цветовая схема',
     },
     name: {
         descriptionFieldType: 'textField',
@@ -32,7 +32,7 @@ export const templateDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'name',
+        label: 'Название',
     },
     device: {
         descriptionFieldType: 'selectField',
@@ -48,7 +48,7 @@ export const templateDescription = {
         itemText: "name",
         itemValue: "id",
         returnObject: true,
-        label: 'device',
+        label: 'Устройство',
     },
     film: {
         descriptionFieldType: 'selectField',
@@ -64,7 +64,7 @@ export const templateDescription = {
         itemText: "name",
         itemValue: "id",
         returnObject: true,
-        label: 'film',
+        label: 'Пленка',
     },
     luminophore: {
         descriptionFieldType: 'selectField',
@@ -80,7 +80,7 @@ export const templateDescription = {
             return prop.name
         },
         returnObject: true,
-        label: 'luminophore',
+        label: 'Люминофор',
     },
     color: {
         descriptionFieldType: 'textField',
@@ -88,6 +88,6 @@ export const templateDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'color',
+        label: 'Цвет частиц люминофора',
     },
 };

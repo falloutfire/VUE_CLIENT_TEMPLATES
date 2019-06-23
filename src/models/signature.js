@@ -21,7 +21,7 @@ export const signatureDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'description',
+        label: 'Описание',
     },
     date: {
         descriptionFieldType: 'dateField',
@@ -32,7 +32,7 @@ export const signatureDescription = {
         flexValues: {
             xs12: true
         },
-        label: 'date',
+        label: 'Дата создания',
         readonly: true
     }/*,
     signature: {

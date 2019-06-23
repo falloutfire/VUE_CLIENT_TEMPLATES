@@ -24,7 +24,9 @@ export const luminophoreDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'name',
+        label: 'Название',
+        counter: '60',
+        maxlength: '60'
     },
     color:  {
         descriptionFieldType: 'textField',
@@ -32,7 +34,10 @@ export const luminophoreDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'color',
+        label: 'Цвет',
+        suffix: 'RGB',
+        counter: '6',
+        maxlength: '6'
     },
     size:  {
         descriptionFieldType: 'textField',
@@ -40,7 +45,10 @@ export const luminophoreDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'size',
+        label: 'Размер',
+        suffix: 'мм',
+        counter: '60',
+        maxlength: '60'
     },
     brightness:  {
         descriptionFieldType: 'textField',
@@ -48,7 +56,9 @@ export const luminophoreDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'brightness',
+        label: 'Яркость',
+        suffix: '%',
+        mask: '###'
     },
     afterglow:  {
         descriptionFieldType: 'textField',
@@ -56,7 +66,9 @@ export const luminophoreDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'afterglow',
+        label: 'Время послесвечения',
+        mask: '##',
+        suffix: 'c'
     },
     activationTime:  {
         descriptionFieldType: 'textField',
@@ -64,7 +76,9 @@ export const luminophoreDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'activationTime',
+        label: 'Время активации',
+        mask: '##',
+        suffix: 'c'
     },
 };
 

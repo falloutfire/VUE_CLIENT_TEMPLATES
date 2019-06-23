@@ -24,7 +24,7 @@ export const usersDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'First name',
+        label: 'Имя',
     },
     lastName: {
         descriptionFieldType: 'textField',
@@ -32,7 +32,7 @@ export const usersDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'Last Name',
+        label: 'Фамилия',
     },
     email: {
         descriptionFieldType: 'textField',
@@ -48,7 +48,7 @@ export const usersDescription = {
             xs12: true,
             sm6: true,
         },
-        label: 'Username',
+        label: 'Имя пользователя',
     },
     userPassword: {
         descriptionFieldType: 'textField',
@@ -56,7 +56,7 @@ export const usersDescription = {
         flexValues: {
             xs12: true,
         },
-        label: 'Password',
+        label: 'Пароль',
         type: 'password'
     },
     roles: {
@@ -71,7 +71,7 @@ export const usersDescription = {
         itemValue: "id",
         multiple: true,
         returnObject: true,
-        label: "Roles",
+        label: "Права",
         urlToGetSelectables: 'roles',
     }
 };
