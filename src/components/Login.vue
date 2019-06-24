@@ -8,7 +8,7 @@
                             :class="`elevation-${hover ? 12 : 2}`">
                         <v-card-title primary-title>
                             <v-layout row wrap justify-center>
-                                <span class="headline text-uppercase">Klöckner Pentaplast ADMIN PANEL</span>
+                                <span class="headline text-uppercase">Klöckner ADMIN PANEL</span>
                             </v-layout>
                         </v-card-title>
                         <v-card-text>
