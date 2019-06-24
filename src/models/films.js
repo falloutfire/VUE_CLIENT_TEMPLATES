@@ -32,6 +32,10 @@ export const filmDescription = {
             sm6: true,
         },
         label: 'Светопроницаемость',
+        mask: '###',
+        suffix: '%',
+        counter: '3',
+        maxlength: '3'
     },
     thickness:  {
         descriptionFieldType: 'textField',
