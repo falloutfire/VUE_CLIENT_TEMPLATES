@@ -14,12 +14,12 @@
                               :label="filteredName" clearable></v-text-field>
             </v-flex>
             <v-spacer></v-spacer>
-            <v-btn v-if="create" color="primary" dark class="mb-2" @click="createDialog = true">New {{ tableName }}</v-btn>
+            <v-btn v-if="create" color="primary" dark class="mb-2" @click="createDialog = true">Добавить {{ tableNameRus }}</v-btn>
             <v-dialog v-model="deleteDialog" max-width="500px">
                 <v-card>
                     <v-card-title>
                         <v-layout row wrap justify-center>
-                            <span class="headline ">Are you sure to delete {{ tableName }}?</span>
+                            <span class="headline ">Вы уверены, что хотите удалить {{ tableNameRus }}?</span>
                         </v-layout>
                     </v-card-title>
                     <v-card-actions>
@@ -32,7 +32,7 @@
             </v-dialog>
 
             <edit-dialog
-                    :itemName="tableName"
+
                     :isOpen="editDialog"
                     v-model="editedItem"
                     :fieldsDescription="itemsDescription"
@@ -41,7 +41,7 @@
             ></edit-dialog>
 
             <edit-dialog
-                    :itemName="tableName"
+
                     :isOpen="createDialog"
                     v-model="createdItem"
                     :fieldsDescription="itemsDescription"
@@ -61,12 +61,6 @@
         </v-snackbar>
     </v-flex>
     <v-flex xs12>
-        <!--<v-data-table
-                :headers="headers"
-                :items="items"
-                :loading="itemsLoading"
-                class="elevation-1"
-        >-->
         <v-data-table
                 :headers="headers"
                 :items="filteredItems"
@@ -120,12 +114,15 @@
         name: "CrudTable",
         components: {EditDialog},
         props: {
+            tableNameRus: String,
             tableName: String,
             crudURL: String,
             itemsDescription: Object,
             defaultItem: Object,
             filterName: String,
-            create: Boolean
+            create: Boolean,
+            headers: [],
+            filterNameRus: String
         },
         data() {
             return {
@@ -152,7 +149,7 @@
             }
         },
         computed: {
-            headers() {
+            /*headers() {
                 return Object.entries(this.itemsDescription).filter(([, descr]) => {
                     return descr.showInTable === undefined || descr.showInTable
                 }).map(([key,]) => {
@@ -161,7 +158,7 @@
                         value: key,
                     }
                 })
-            },
+            },*/
             filteredItems() {
                 const name = this.filterName;
                 return this.items.filter(item => {
@@ -169,7 +166,7 @@
                 })
             },
             filteredName() {
-                return "Find by " + this.filterName;
+                return "Найти по " + this.filterNameRus;
 
             }
         },
@@ -182,7 +179,7 @@
             },
             success() {
                 this.updateItems();
-                this.snackbarText = 'success';
+                this.snackbarText = 'Операция прошла успешно';
                 this.snackbar = true;
                 this.snackbarColor = 'success';
             },
@@ -218,7 +215,7 @@
             },
             save() {
                 this.createLoading = true;
-                HTTP.post(`${this.crudURL}/${this.deletedItem.id}`, this.createdItem).then(() => {
+                HTTP.post(`${this.crudURL}`/*/${this.deletedItem.id}`*/, this.createdItem).then(() => {
                     this.createLoading = false;
                     this.createdItem = lodash.cloneDeep(this.defaultItem);
                     this.createDialog = false;

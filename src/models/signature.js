@@ -34,7 +34,7 @@ export const signatureDescription = {
         },
         label: 'Дата создания',
         readonly: true
-    }/*,
+    },
     signature: {
         descriptionFieldType: 'textField',
         flexValues: {
@@ -42,5 +42,6 @@ export const signatureDescription = {
             sm6: true,
         },
         label: 'signature',
-    }*/
+        readonly: true
+    }
 };

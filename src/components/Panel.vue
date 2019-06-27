@@ -128,89 +128,155 @@
                 currentTableName: null,
                 tables: {
                     'UserTable': {
-                        tableName: 'User',
+                        tableName: 'Пользователи',
+                        tableNameRus: 'Пользователя',
                         crudURL: 'users',
                         itemsDescription: lodash.cloneDeep(usersDescription),
                         defaultItem: lodash.cloneDeep(defaultUser),
-                        filterName: 'login',
-                        create: true
+                        filterName: 'userName',
+                        create: true,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Имя', value: 'firstName'},
+                            {text: 'Фамилия', value: 'lastName'},
+                            {text: 'Email', value: 'email'},
+                            {text: 'Логин', value: 'userName'},
+                            {text: 'Роли', value: 'roles'},
+                        ],
+                        filterNameRus: 'логину'
                     },
                     'DeviceTable': {
-                        tableName: 'Device',
+                        tableNameRus: 'Устройство',
+                        tableName: 'Устройства',
                         crudURL: 'bd_template/device',
                         itemsDescription: lodash.cloneDeep(deviceDescription),
                         defaultItem: lodash.cloneDeep(defaultDevice),
                         filterName: 'name',
-                        create: true
+                        create: true,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Название', value: 'name'},
+                            {text: 'Разрешение', value: 'resolution'},
+                            {text: 'Камера', value: 'mp'},
+                            {text: 'Фокус', value: 'focus'},
+                            {text: 'Стабилизация', value: 'stabilization'},
+                        ],
+                        filterNameRus: 'названию'
                     },
                     'ChemicalTypesTable': {
-                        tableName: 'ChemicalType',
+                        tableNameRus: 'Хим. Тип',
+                        tableName: 'Хим. Типы',
                         crudURL: 'bd_template/chemical_types',
                         itemsDescription: lodash.cloneDeep(chemicalTypeDescription),
                         defaultItem: lodash.cloneDeep(defaultChemicalType),
                         filterName: 'type',
-                        create: true
+                        create: true,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Название', value: 'type'}
+                        ],
+                        filterNameRus: 'названию'
                     },
                     'FilmsTable': {
-                        tableName: 'Film',
+                        tableNameRus: 'Пленку',
+                        tableName: 'Пленки',
                         crudURL: 'bd_template/film',
                         itemsDescription: lodash.cloneDeep(filmDescription),
                         defaultItem: lodash.cloneDeep(defaultFilm),
                         filterName: 'name',
-                        create: true
+                        create: true,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Название', value: 'name'},
+                            {text: 'Цвет', value: 'color'},
+                            {text: 'Тип', value: 'chemicalType'},
+                            {text: 'Светопроницаемость', value: 'lightPermeability'},
+                            {text: 'Толщина', value: 'thickness'},
+                        ],
+                        filterNameRus: 'названию'
                     },
                     'LuminophoreTable': {
-                        tableName: 'Luminophore',
+                        tableNameRus: 'Люминофор',
+                        tableName: 'Люминофоры',
                         crudURL: 'bd_template/luminophore',
                         itemsDescription: lodash.cloneDeep(luminophoreDescription),
                         defaultItem: lodash.cloneDeep(defaultLuminophore),
                         filterName: 'name',
-                        create: true
+                        create: true,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Название', value: 'name'},
+                            {text: 'Цвет', value: 'color'},
+                            {text: 'Размер', value: 'size'},
+                            {text: 'Яркость', value: 'brightness'},
+                            {text: 'Время послесвечения', value: 'afterglow'},
+                            {text: 'Время активации', value: 'activationTime'},
+                        ],
+                        filterNameRus: 'названию'
                     },
                     'TemplatesTable': {
-                        tableName: 'Template',
+                        tableNameRus: 'Шаблон',
+                        tableName: 'Шаблоны',
                         crudURL: 'bd_template/template',
                         itemsDescription: lodash.cloneDeep(templateDescription),
                         defaultItem: lodash.cloneDeep(defaultTemplate),
                         filterName: 'name',
-                        create: true
+                        create: true,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Цветовая\nсхема', value: 'colorScheme'},
+                            {text: 'Название', value: 'name'},
+                            {text: 'Устройство', value: 'device'},
+                            {text: 'Пленка', value: 'film'},
+                            {text: 'Люминофор', value: 'luminophore'},
+                            {text: 'Цвет', value: 'color'},
+                        ],
+                        filterNameRus: 'названию'
                     },
                     'SignatureTable': {
-                        tableName: 'Signature',
+                        tableNameRus: 'Сигнатуру',
+                        tableName: 'Сигнатуры',
                         crudURL: 'bd_template/signature/format',
                         itemsDescription: lodash.cloneDeep(signatureDescription),
                         defaultItem: lodash.cloneDeep(defaultSignature),
                         filterName: 'description',
-                        create: false
+                        create: false,
+                        headers: [
+                            {text: 'id', value: 'id'},
+                            {text: 'Описание', value: 'description'},
+                            {text: 'Дата создания', value: 'date'},
+                            {text: 'Сигнатура', value: 'signature'},
+                        ],
+                        filterNameRus: 'описанию'
                     },
                 },
                 items: [
                     {
-                        title: 'Users',
+                        title: 'Пользователи',
                         table: 'UserTable',
                     },
                     {
-                        title: 'Devices',
+                        title: 'Устройства',
                         table: 'DeviceTable',
                     },
                     {
-                        title: 'ChemicalTypes',
+                        title: 'Химический тип',
                         table: 'ChemicalTypesTable',
                     },
                     {
-                        title: 'Films',
+                        title: 'Пленки',
                         table: 'FilmsTable',
                     },
                     {
-                        title: 'Luminophore',
+                        title: 'Люминофор',
                         table: 'LuminophoreTable',
                     },
                     {
-                        title: 'Templates',
+                        title: 'Шаблоны',
                         table: 'TemplatesTable',
                     },
                     {
-                        title: 'Signature',
+                        title: 'Сигнатуры',
                         table: 'SignatureTable',
                     },
 
@@ -252,7 +318,7 @@
 
             setInterval(function () {
                 this.loadData();
-            }.bind(this), 1000);
+            }.bind(this), 7000);
         }
     }
 </script>

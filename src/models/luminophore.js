@@ -46,7 +46,7 @@ export const luminophoreDescription = {
             sm6: true,
         },
         label: 'Размер',
-        suffix: 'мм',
+        suffix: 'мкм',
         counter: '60',
         maxlength: '60'
     },
