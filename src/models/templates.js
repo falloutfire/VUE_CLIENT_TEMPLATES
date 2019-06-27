@@ -1,6 +1,6 @@
 export const defaultTemplate = {
     id: "",
-    colorScheme: "",
+    /*colorScheme: "",*/
     name: "",
     device: "",
     film: "",
@@ -25,14 +25,14 @@ export const templateDescription = {
         },
         label: 'id',
     },
-    colorScheme: {
+    /*colorScheme: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
         label: 'Цветовая схема',
-    },
+    },*/
     name: {
         descriptionFieldType: 'textField',
         flexValues: {

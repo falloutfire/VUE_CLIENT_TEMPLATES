@@ -223,7 +223,7 @@
                         create: true,
                         headers: [
                             {text: 'id', value: 'id'},
-                            {text: 'Цветовая\nсхема', value: 'colorScheme'},
+                            /*{text: 'Цветовая\nсхема', value: 'colorScheme'},*/
                             {text: 'Название', value: 'name'},
                             {text: 'Устройство', value: 'device'},
                             {text: 'Пленка', value: 'film'},
