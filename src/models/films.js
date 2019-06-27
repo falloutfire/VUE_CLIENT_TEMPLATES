@@ -1,7 +1,6 @@
 export const defaultFilm = {
     id: "",
     name: "",
-    color: "",
     chemicalType: "",
     lightPermeability: "",
     thickness: ""

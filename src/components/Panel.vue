@@ -188,10 +188,9 @@
                         headers: [
                             {text: 'id', value: 'id'},
                             {text: 'Название', value: 'name'},
-                            {text: 'Цвет', value: 'color'},
-                            {text: 'Тип', value: 'chemicalType'},
                             {text: 'Светопроницаемость', value: 'lightPermeability'},
                             {text: 'Толщина', value: 'thickness'},
+                            {text: 'Тип', value: 'chemicalType'},
                         ],
                         filterNameRus: 'названию'
                     },
