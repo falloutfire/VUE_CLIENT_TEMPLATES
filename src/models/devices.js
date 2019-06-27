@@ -33,8 +33,7 @@ export const deviceDescription = {
             sm6: true,
         },
         label: 'Разрешение',
-        suffix: 'px',
-        mask: '####*####'
+        suffix: 'px'
     },
     mp: {
         descriptionFieldType: 'textField',
