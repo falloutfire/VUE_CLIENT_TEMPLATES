@@ -5,7 +5,14 @@ export const defaultTemplate = {
     device: "",
     film: "",
     luminophore: "",
-    color: ""
+    lowerColorBound : "",
+    points: "",
+    triangles: "",
+    minRadius: "",
+    maxRadius: "",
+    maxCircularity: "",
+    circularity : "",
+    radius: "",
 };
 
 export const templateDescription = {
@@ -82,12 +89,68 @@ export const templateDescription = {
         returnObject: true,
         label: 'Люминофор',
     },
-    color: {
+    lowerColorBound: {
         descriptionFieldType: 'textField',
         flexValues: {
             xs12: true,
             sm6: true,
         },
-        label: 'Цвет частиц люминофора',
+        label: 'Нижняя граница цвета',
+    },
+    points: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Кол-во точек',
+    },
+    triangles: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Кол-во треугольников',
+    },
+    minRadius: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Минимальный радиус',
+    },
+    maxRadius: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Максимальный радиус',
+    },
+    maxCircularity: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Макс. округлость',
+    },
+    circularity: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Округлость',
+    },
+    radius: {
+        descriptionFieldType: 'textField',
+        flexValues: {
+            xs12: true,
+            sm6: true,
+        },
+        label: 'Радиус',
     },
 };
